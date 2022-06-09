@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+	display: flex;
+	background-color: pink;
+	justify-content: space-around;
+	height: 50px;
+	align-items: center;
+	color: black;
+}
+
+nav .logo {
+	z-index: 5;
+}
+
+nav .logo:hover {
+	cursor: pointer;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	width: 50%;
+	justify-content: space-between;
+}
+
+nav ul li a {
+	color: black;
+	text-decoration: none;
+	font-size: 0.8em;
+}
+
+nav ul li a:hover {
+	color: white;
+}
+
+.menu-toogle {
+	display: none;
+	flex-direction: column;
+	height: 20px;
+	justify-content: space-between;
+	position: relative;
+}
+
+.menu-toogle span {
+	display: block;
+	width: 28px;
+	height: 3px;
+	background-color: brown;
+	border-radius: 3px;
+	transition: all 0.5s;
+}
+
+.menu-toogle input {
+	position: absolute;
+	width: 40px;
+	height: 28px;
+	opacity: 0;
+	left: -5px;
+	top: -3px;
+	cursor: pointer;
+	z-index: 3;
+}
+
+/* Hamburger Menu Animations */
+.menu-toogle span:nth-child(2) {
+	transform-origin: 0 0;
+}
+
+.menu-toogle span:nth-child(4) {
+	transform-origin: 0 100%;
+}
+
+.menu-toogle input:checked ~ span:nth-child(2) {
+	background-color: white;
+	transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toogle input:checked ~ span:nth-child(4) {
+	background-color: white;
+	transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toogle input:checked ~ span:nth-child(3) {
+	opacity: 0;
+	transform: scale(0);
+}
+
+/* Responsive Breakpoint*/
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+	nav ul {
+		display: flex;
+		width: 50%;
+	}
+}
+
+/* ukuran ponsel*/
+@media screen and (max-width: 576px) {
+	.menu-toogle {
+		display: flex;
+	}
+
+	nav ul {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 80%;
+		height: 100vh;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		background-color: black;
+		z-index: -1;
+		transform: translateX(100%);
+		transition: all 1s;
+		opacity: 0;
+	}
+
+	nav ul.slide {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
