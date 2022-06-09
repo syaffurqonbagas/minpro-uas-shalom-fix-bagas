@@ -21,7 +21,9 @@ nav {
   overflow: auto;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 50px;
 }
+
 nav ul {
   list-style: none;
   display: flex;
@@ -31,6 +33,7 @@ nav ul {
   padding-left: 60px;
 }
 nav ul li a {
+  padding: 10px;
   color: #fff;
   text-decoration: none;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -38,15 +41,20 @@ nav ul li a {
   font-weight: bold;
 }
 nav a:hover {
+  background-color: #131013;
   opacity: 0.7;
   border-radius: 5px;
+  font-size: 22px;
   text-decoration: underline;
 }
 .ulBawah {
+  box-shadow: rgb(0, 128, 128);
   background-color: rgba(0, 128, 128);
   display: none;
   list-style: none;
   position: absolute;
+  left: 620px;
+  top: 55px;
   border-radius: 10px;
   width: 120px;
 }
@@ -56,7 +64,8 @@ nav ul li:hover .ulBawah {
   padding-left: 0;
 }
 nav ul li:hover .ulBawah li {
-  padding: 20px;
+  margin: auto;
+  padding: 20px 0px;
 }
 input[type="text"] {
   padding: 7px;
